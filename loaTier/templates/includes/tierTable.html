@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamen Tier</title>
+    <style>
+      .maintb {
+        display: flex;
+        float: right;
+        margin-top: 30px;
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+      #seticon {
+        width: 500px;
+        height: 1500px;
+        border: solid 2px black;
+        float: right;
+        margin-left: -150px;
+        background-color: slategray;
+        display: flex;
+        flex-direction: row;
+      }
+      .renkin {
+        display: flex;
+        flex: 1;
+        width: 800px;
+        min-height: 100px;
+        border: solid 2px black;
+        background-color: slategray;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .renkin.dragover {
+        background-color: purple;
+      }
+      .imgtag {
+        width: 70px;
+        height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <tier>
+      <nav>
+        <ul>
+          <div border="1" class="maintb" align="center" id="icon">
+            <div class="lain">
+              <div width="50px" align="center" id="Aclass" class="rank">A</div>
+              <div width="500px" class="renkin" id="Aicon"></div>
+            </div>
+            <div class="lain">
+              <div align="center" id="Bclass" class="rank">B</div>
+              <div width="500px" class="renkin" id="Bicon"></div>
+            </div>
+            <div class="lain">
+              <div align="center" id="Cclass" class="rank">C</div>
+              <div width="500px" class="renkin" id="Cicon"></div>
+            </div>
+            <div class="lain">
+              <div align="center" id="Dclass" class="rank">D</div>
+              <div width="500px" class="renkin" id="Dicon"></div>
+            </div>
+            <div class="lain">
+              <div align="center" id="Eclass" class="rank">E</div>
+              <div width="500px" class="renkin" id="Eicon"></div>
+            </div>
+          </div>
+          <div border="1" class="maintb">
+            <div id="seticon" class="renkin">
+              {% for i in engvs %}
+                <div class="imgtag" draggable="true" id="{{ i }}">
+                  <img src="{% get_static_prefix %}imgdata/{{i}}.webp" width="50px" height="50px" draggable="false" />
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </tier>
+  </body>
+</html>

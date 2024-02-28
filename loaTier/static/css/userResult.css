@@ -1,0 +1,206 @@
+body {
+  padding-top: 85px;
+}
+
+.maintb {
+  display: flex;
+  float: right;
+  margin-top: 30px;
+  margin-right: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+#seticon {
+  width: 500px;
+  height: 1500px;
+  border: solid 2px black;
+
+  margin-right: auto;
+  background-color: slategray;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon{
+  width: 70px;
+  height: 60px;
+  padding: 4px 0px;
+}
+
+.text{
+  border: solid 1px black;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.renkin {
+  display: flex;
+  flex: 1;
+  width: 800px;
+  min-height: 100px;
+  border: solid 2px black;
+  background-color: slategray;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#main {
+  display: flex;
+  float: left;
+  margin-left: 150px;
+  width: 800px;
+  flex-direction: row;
+}
+
+body {
+  background-color: azure;
+  user-select: none;
+}
+
+.lain {
+  display: flex;
+  flex-direction: row;
+}
+.rank {
+  min-height: 100px;
+}
+
+#Aclass {
+  background-color: red;
+  font-size: 30px;
+  width: 80px;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Bclass {
+  background-color: orange;
+  font-size: 30px;
+  width: 80px;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Cclass {
+  background-color: yellow;
+  font-size: 30px;
+  width: 80px;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Dclass {
+  background-color: greenyellow;
+  font-size: 30px;
+  width: 80px;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Eclass {
+  background-color: cornflowerblue;
+  font-size: 30px;
+  width: 80px;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgtag {
+  width: 80px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 4px 1px;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.renkin.dragover {
+  background-color: purple;
+}
+
+.awakeningname {
+  border: solid 1px wheat;
+  background-color: wheat;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 75px;
+  padding: 1rem;
+  color: white;
+  background: teal;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select {
+  padding: 15px 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select input[type="radio"] {
+  display: none;
+}
+.select input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+  border: 1px solid #333;
+  line-height: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select input[type="radio"] + label {
+  background-color: #fff;
+  color: #333;
+}
+.select input[type="radio"]:checked + label {
+  background-color: #333;
+  color: #fff;
+}
+
+#viewAllResult {
+  display: flex;
+  margin-left: 150px;
+  text-align: center;
+  margin-top: 0px;
+  width: 200px;
+  height: 35px;
+  background-color: #5c75e6;
+  color: white;
+  font-size: 17px;
+}
+
+#viewAllResult:hover {
+  background-color: #6682ff;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}

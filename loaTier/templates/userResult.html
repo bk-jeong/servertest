@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/userResult.css" %}?ver=1" />
+    <title>LoaTier</title>
+  </head>
+  <body>
+    <header>
+      {% include "includes/header.html" %}
+    </header>
+    <div class="select">
+      <nav>
+        <ul>
+          <li>
+            <input type="radio" id="{{raid}}" name="shop" value="{{raid}}" checked/>
+            <label for="{{raid}}">
+              <img src="{% get_static_prefix%}imgdata/{{raid}}.png" width="50px"
+              height="50px" draggable="false" />
+            </label>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+      <div><button id="viewAllResult">통계 결과 보기</button></div>
+      <div id="main">
+        <div border="1" class="maintb" align="center" id="icon">
+          <div class="lain">
+            <div width="50px" align="center" id="Aclass" class="rank">A</div>
+            <div width="500px" class="renkin" id="Aicon">
+              {%for tier1 in tier1%}
+                <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier1}}.webp" draggable="false">
+                  <div class="text" width="120px" >{{tier1}}</div></div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="lain">
+            <div align="center" id="Bclass" class="rank">B</div>
+            <div width="500px" class="renkin" id="Bicon">
+              {%for tier2 in tier2%}
+                <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier2}}.webp" draggable="false">
+                  <div class="text" width="120px" >{{tier2}}</div></div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="lain">
+            <div align="center" id="Cclass" class="rank">C</div>
+            <div width="500px" class="renkin" id="Cicon">
+              {%for tier3 in tier3%}
+                <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier3}}.webp" draggable="false">
+                  <div class="text" width="120px" >{{tier3}}</div></div>
+              {%endfor%}
+
+            </div>
+          </div>
+          <div class="lain">
+            <div align="center" id="Dclass" class="rank">D</div>
+            <div width="500px" class="renkin" id="Dicon">
+              {%for tier4 in tier4%}
+                <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier4}}.webp" draggable="false">
+                  <div class="text" width="120px" >{{tier4}}</div></div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="lain">
+            <div align="center" id="Eclass" class="rank">E</div>
+            <div width="500px" class="renkin" id="Eicon">
+              {%for tier5 in tier5%}
+                <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier5}}.webp" draggable="false">
+                  <div class="text" width="120px" >{{tier5}}</div></div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div border="1" class="maintb">
+        <div id="seticon" class="renkin">
+         {%for tierout in tierout%}
+            <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tierout}}.webp" draggable="false">
+              <div class="text" width="120px" >{{tierout}}</div></div>
+         {%endfor%}
+        </div>
+      </div>
+    </div>
+    <script src="{% static "js/userResult.js" %}?ver=1" > </script>
+  </body>
+  </html>

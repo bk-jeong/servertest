@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector</title>
+    <style>
+      .select {
+        padding: 15px 10px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .select input[type="radio"] {
+        display: none;
+      }
+      .select input[type="radio"] + label {
+        display: inline-block;
+        cursor: pointer;
+        height: 70px;
+        width: 70px;
+        border: 1px solid #333;
+        line-height: 24px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: #333;
+      }
+
+      .select input[type="radio"]:checked + label {
+        background-color: #333;
+        color: #fff;
+      }
+
+      #kamen:checked + label {
+        background-color: #6682ff;
+        box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+      }
+      #kamen:hover + label {
+        background-color: #6682ff;
+        box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+      }
+
+      #illiakan:checked + label {
+        background-color: #47c83e;
+        box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+      }
+      #illiakan:hover + label {
+        background-color: #47c83e;
+        box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+      }
+
+      #echidna:checked + label {
+        background-color: #ffb2f5;
+        box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+      }
+      #echidna:hover + label {
+        background-color: #ffb2f5;
+        box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="select">
+      <nav>
+        <ul>
+          <li>
+            <input type="radio" id="kamen" name="shop" value="kamen" />
+            <label for="kamen">
+              <img src="{% static "imgdata/kamen.png" %}" width="50px"
+              height="50px" draggable="false" />
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="illiakan" name="shop" value="illiakan" />
+            <label for="illiakan">
+              <img src="{% static "imgdata/illiakan.png" %}" width="50px"
+              height="50px" draggable="false" />
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="echidna" name="shop" value="echidna" />
+            <label for="echidna">
+              <img src="{% static "imgdata/echidna.png" %}" width="50px"
+              height="50px" draggable="false" />
+            </label>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

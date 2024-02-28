@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/index.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/home.css" %}?ver=1" />
+    <title>LoaTier</title>
+  </head>
+  
+  <body>
+    <header>
+      <h1> menu</h1>
+      <a href="/home">home</a>
+    </header>
+    <div> 주요기능 </div>
+    <div class="home">
+        <div class="menu">
+            <a  href="/"><div class="maina"><h3>티어 만들기내가</h3> <p><div class='text'> 만드는 티어표</div></div></a>
+            <a  href="res/all"><div class="maina"><h3>티어 통계</h3><p><div class='text'>사람들이 생각하는 티어 통계</div></div></a>
+            <a  href="#"><div class="maina"><h3>새로운 기능</h3><p><div class='text'>새로 만들어질 기능</div></div></a>
+        </div>
+    </div>
+    
+    <script src="{% static "js/index.js" %}?ver=2" > </script>
+  </body>
+  </html>
