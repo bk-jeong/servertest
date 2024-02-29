@@ -31,8 +31,8 @@ environ.Env.read_env(
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-#DEBUG = env("DEBUG")
+# DEBUG = True
+DEBUG = env("DEBUG")
 
 # ALLOWED_HOSTS = ['15.164.171.106']
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
