@@ -33,15 +33,15 @@ def home(request):
 
 def make(request, group):
     try:
-        pk = Tier.objects.last().pk
+        if(Tier.objects.last() != None):
+            pk = Tier.objects.last().pk
+        else:
+            pk = 0
         raid = request.get_full_path().replace('make/','')
         context = {"engvs": getEngvInit(), "raid":raid.replace('/',''), "pk": pk}
         return render(request, "tierMaker.html", context)
-    except Exception:
-        raid = request.get_full_path().replace('make/','')
-        context = {"engvs": getEngvInit(), "raid":raid.replace('/',''), "pk": 0}
-        return render(request, "tierMaker.html", context)
-
+    except:
+        return render(request, "error.html")
 
 def personal(request, group, id):
     try:
@@ -76,14 +76,18 @@ def personal(request, group, id):
         }
         return render(request, "userResult.html", context)
     except Exception as e:
-        return print(str(e))
+        return render(request, "error.html")
 
 def statitcs(request):
     try:
         # Tier 테이블에 있는 데이터 가져오기
-        rname = request.GET.get('raid')
+        raid = request.GET.get('raid')
         
-        data = Tier.objects.filter(rname=rname).values()
+        if len(Tier.objects.filter(rname=raid)) > 0:
+            data = Tier.objects.filter(rname=raid).values()
+        else:
+            data = getTierInit()
+            data['tierout'] = getEngvInit().keys() 
         
         alldf = pd.DataFrame(data).loc[
             :, ["tier1", "tier2", "tier3", "tier4", "tier5", "tierout"]
@@ -107,23 +111,26 @@ def statitcs(request):
                 for k in score.keys():   # 각인 개수만큼 반복
                     if alldf[j].str.contains(k)[i]:
                         return_obj[j][k] += 1   # 특정 티어의 특정 각인의 value 1씩 더한다
-                        if j == "tier1":
-                            score[k] += return_obj[j][k] * 5 / ndata
-                        elif j == "tier2":
-                            score[k] += return_obj[j][k] * 4 / ndata
-                        elif j == "tier3":
-                            score[k] += return_obj[j][k] * 3 / ndata
-                        elif j == "tier4":
-                            score[k] += return_obj[j][k] * 2 / ndata
-                        elif j == "tier5":
-                            score[k] += return_obj[j][k] / ndata
+
+        for j in return_obj.keys():
+            for k in score.keys():
+                if j == "tier1":
+                    score[k] += (return_obj[j][k]*5)/ndata
+                elif j == "tier2":
+                    score[k] += (return_obj[j][k]*4)/ndata
+                elif j == "tier3":
+                    score[k] += (return_obj[j][k]*3)/ndata
+                elif j == "tier4":
+                    score[k] += (return_obj[j][k]*2)/ndata
+                elif j == "tier5":
+                    score[k] += (return_obj[j][k])/ndata
         # 점수를 큰 순서대로 정렬
         sorted_score = sorted(score.items(), key=lambda item: item[1], reverse=True)
         #print(sorted_score)
         
         # html에서 보여줄 티어표
         context = {
-            "raid" : rname,
+            "raid" : raid,
             "tier1": [],
             "tier2": [],
             "tier3": [],
@@ -149,11 +156,11 @@ def statitcs(request):
         # 통계(비율) 계산하기
         engv_statics = getEngvInit()
         for engv in engv_statics.keys():
-            engv_statics[engv] = {"tier1": 0, "tier2": 0, "tier3": 0, "tier4": 0, "tier5": 0, "tierout": 0}
+            engv_statics[engv] = {"OP": 0, "1티어": 0, "2티어": 0, "3티어": 0, "4티어": 0, "선택없음": 0}
             for tier in return_obj.keys():
                 engv_statics[engv][tier] = return_obj[tier][engv] / ndata
         engv_name = list(engv_statics.keys())
         engv_statics = json.dumps(engv_statics)
         return render(request, "allResult.html" ,{'context': context, 'engv_statics':engv_statics, "engv_name":engv_name})
     except Exception as e:
-        return print(str(e))
+        return render(request, "error.html")

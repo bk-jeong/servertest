@@ -34,7 +34,6 @@ SECRET_KEY = env('SECRET_KEY')
 # DEBUG = True
 DEBUG = env("DEBUG")
 
-# ALLOWED_HOSTS = ['15.164.171.106']
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
 # Application definition
@@ -82,18 +81,6 @@ WSGI_APPLICATION = 'loaproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'loaproject',
-#         'USER': 'root',
-#         'PASSWORD': '1234',
-#         'HOST': 'localhost',
-#         'PORT': '3306'
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -139,7 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR, "loaTier/static"),]
 

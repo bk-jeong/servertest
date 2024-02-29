@@ -4,95 +4,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/allResult.css" %}?ver=2" />
+    <link rel="stylesheet" href="{% static "css/index.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/selector.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/common.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/not_common.css" %}?ver=1" /
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
     <title>LoaTier</title>
   </head>
   <body>
-    <header>
-      <h1> menu</h1>
-      <a href="/home">home</a>
+    <header style="z-index:2;">
+      {% include "includes/header.html" %}
     </header>
-    <div>
-      <div class="select" style="position:relative;z-index:5;">
-        {%include "includes/selector.html"%}
-      </div>
-    <div id="main">
-      <div border="1" class="maintb" align="center" id="icon">
-        <div class="lain">
-          <div width="50px" align="center" id="Aclass" class="rank">A</div>
-          <div width="500px" class="renkin" id="Aicon">
-            {%for tier1 in context.tier1%}
-              {% if tier1 != '' %}
-                <div class="ebox" ><img class="icon" src="{% get_static_prefix %}imgdata/{{tier1}}.webp" width="80px" height="80px" draggable="false" name="{{tier1 }}">
-                <div class="text" width="120px" >{{tier1}}</div></div>
-                {% endif %}
-              {%endfor%}
-          </div>
-        </div>
-        <div class="lain">
-          <div align="center" id="Bclass" class="rank">B</div>
-          <div width="500px" class="renkin" id="Bicon">
-            {%for tier2 in context.tier2%}
-            {% if tier2 != '' %}
-                <div class="ebox" ><img class="icon" src="{% get_static_prefix %}imgdata/{{tier2}}.webp" width="80px" height="80px" draggable="false" name="{{tier2 }}">
-                  <div class="text" width="120px" >{{tier2}}</div></div>
-                {% endif %}
-              {%endfor%}
-            </div>
-        </div>
-        <div class="lain">
-          <div align="center" id="Cclass" class="rank">C</div>
-          <div width="500px" class="renkin" id="Cicon">
-            {%for tier3 in context.tier3%}
-            {% if tier3 != '' %}
-                <div class="ebox" ><img class="icon" src="{% get_static_prefix %}imgdata/{{tier3}}.webp" width="80px" height="80px" draggable="false" name="{{tier3 }}">
-                  <div class="text" width="120px" >{{tier3}}</div></div>
-                {% endif %}
-              {%endfor%}
-            </div>
-        </div>
-        <div class="lain">
-          <div align="center" id="Dclass" class="rank">D</div>
-          <div width="500px" class="renkin" id="Dicon">
-            {%for tier4 in context.tier4%}
-            {% if tier4 != '' %}
-                <div class="ebox" ><img class="icon" src="{% get_static_prefix %}imgdata/{{tier4}}.webp" width="80px" height="80px" draggable="false" name="{{tier4 }}">
-                  <div class="text" width="120px" >{{tier4}}</div></div>
-                {% endif %}
-              {%endfor%}
-            </div>
-        </div>
-        <div class="lain">
-          <div align="center" id="Eclass" class="rank">E</div>
-          <div width="500px" class="renkin" id="Eicon">
-            {%for tier5 in context.tier5%}
-            {% if tier5 != '' %}
-                <div class="ebox" ><img class="icon" src="{% get_static_prefix %}imgdata/{{tier5}}.webp" width="80px" height="80px" draggable="false" name="{{tier5 }}">
-                  <div class="text" width="120px" >{{tier5}}</div></div>
-                {% endif %}
-            {%endfor%}
-          </div>
-        </div>
-      </div>
+    
+    <div class="select" style="top:15px; z-index:1;">
+      {%include "includes/selector.html"%}
     </div>
-    <div border="1" class="maintb">
-      <div id="seticon" class="renkin">
-        <div width="500px" class="renkin" id="Eicon">
-          {%for tierout in context.tierout%}
-          {% if tierout != '' %}
-              <div class="ebox"  ><img class="icon" src="{% get_static_prefix %}imgdata/{{tierout}}.webp" width="60px" height="60px" draggable="false"  name="{{tierout }}">
-                <div class="text" width="120px" >{{tierout}}</div></div>
-              {% endif %}
-          {%endfor%}
-      </div> 
+
+      <div id="main">
+        <nav>
+          <ul>
+            <div border="1" class="maintb" align="center" id="icon">
+              <div class="lain">
+                <div width="50px" align="center" id="Aclass" class="rank">A</div>
+                <div width="500px" class="renkin" id="Aicon">
+                  {%for tier1 in context.tier1%}
+                  {% if tier1 != '' %}
+                  <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier1}}.webp" draggable="false" name="{{tier1 }}">
+                  <div class="text" width="120px" >{{tier1}}</div></div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+              </div>
+              <div class="lain">
+                <div align="center" id="Bclass" class="rank">B</div>
+                <div width="500px" class="renkin" id="Bicon">
+                  {%for tier2 in context.tier2%}
+                  {% if tier2 != '' %}
+                    <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier2}}.webp" draggable="false" name="{{tier2 }}">
+                      <div class="text" width="120px" >{{tier2}}</div></div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+              </div>
+              <div class="lain">
+                <div align="center" id="Cclass" class="rank">C</div>
+                <div width="500px" class="renkin" id="Cicon">
+                  {%for tier3 in context.tier3%}
+                  {% if tier3 != '' %}
+                    <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier3}}.webp" draggable="false" name="{{tier3 }}">
+                      <div class="text" width="120px" >{{tier3}}</div></div>
+                  {%endif%}
+                  {%endfor%}
+
+                </div>
+              </div>
+              <div class="lain">
+                <div align="center" id="Dclass" class="rank">D</div>
+                <div width="500px" class="renkin" id="Dicon">
+                  {%for tier4 in context.tier4%}
+                  {% if tier4 != '' %}
+                    <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier4}}.webp" draggable="false" name="{{tier4 }}">
+                      <div class="text" width="120px" >{{tier4}}</div></div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+              </div>
+              <div class="lain">
+                <div align="center" id="Eclass" class="rank">E</div>
+                <div width="500px" class="renkin" id="Eicon">
+                  {%for tier5 in context.tier5%}
+                  {% if tier5 != '' %}
+                    <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tier5}}.webp" draggable="false" name="{{tier5 }}">
+                      <div class="text" width="120px" >{{tier5}}</div></div>
+                  {%endif%}
+                  {%endfor%}
+                </div>
+              </div>
+            </div>
+            <div border="1" class="maintb">
+              <div id="seticon" class="renkin">
+               {%for tierout in context.tierout%}
+                  {% if tierout != '' %}
+                      <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tierout}}.webp" draggable="false" name="{{tierout }}">
+                      <div class="text" width="120px" >{{tierout}}</div></div>
+                  {%endif%}
+               {%endfor%}
+              </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
+      </ul>
+    </nav>
     {% comment %} div 닫힘 코드가 부족하여 위치 가 이상해 보이는거 수정 & if문 추가하여 없으면 안보이게 수정{% endcomment %}
 
 
    {% comment %} 툴팁이랑 마우스의 위치 좌표를 통일 시키기 위해서 최 외각으로 이동하여 따로 만듬 {% endcomment %}
+  <footer>
+     {%include "includes/footer.html"%}
+  </footer>
   <div>{% for test in engv_name %}
   <canvas  class="tooltip_image" id="{{ test }}" ></canvas>
   {% endfor %}</div>
@@ -101,6 +110,16 @@
   <script> 
     var testalldata={{engv_statics|safe}} 
     test(testalldata)
+  </script>
+  <script>
+     var path = "{{context.raid}}";
+     var page = document.getElementsByName("shop");
+      
+     for(let i=0; i<page.length; i++){
+       if(page[i].value==path){
+         page[i].checked=true;
+       }
+     }
   </script>
 </body>
   </html>

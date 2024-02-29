@@ -121,7 +121,7 @@ document.getElementById("send").onclick = function () {
 
   const form = document.createElement("form");
   form.setAttribute("method", "post");
-  form.setAttribute("action", `/res/${raid}/${pk}`)
+  form.setAttribute("action", `/res/${raid}/${pk}`);
 
   const Raid = document.createElement("input");
   Raid.setAttribute("type", "hidden");

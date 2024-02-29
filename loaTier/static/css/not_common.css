@@ -1,0 +1,46 @@
+@media screen and (min-width: 100px) {
+  #seticon {
+    width: 800px;
+    height: 1500px;
+    border: solid 2px black;
+    float: right;
+    margin: 1px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.renkin.dragover {
+  background-color: bisque;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+/* styling of the tooltip display */
+.tooltip_image {
+  display: none;
+  position: absolute;
+  top: -60px;
+  z-index: 1;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 2px;
+  animation: fadeIn 0.6s;
+  background-color: #696969ff;
+  min-height: 150px;
+  min-width: 250px;
+  border: solid 2px black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

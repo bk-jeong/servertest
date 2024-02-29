@@ -1,0 +1,62 @@
+.select {
+  padding: 15px 10px;
+  /* margin-right: auto; */
+  /* margin-left: auto;*/
+  left: 220px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -1;
+}
+.select input[type="radio"] {
+  display: none;
+}
+.select input[type="radio"] + label {
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+  border: 1px solid #333;
+  line-height: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+}
+
+.select input[type="radio"]:checked + label {
+  background-color: #333;
+  color: #fff;
+}
+
+#kamen:checked + label {
+  background-color: #6682ff;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}
+#kamen:hover + label {
+  background-color: #6682ff;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}
+
+#illiakan:checked + label {
+  background-color: #47c83e;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}
+#illiakan:hover + label {
+  background-color: #47c83e;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}
+
+#echidna:checked + label {
+  background-color: #ffb2f5;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}
+#echidna:hover + label {
+  background-color: #ffb2f5;
+  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+}
