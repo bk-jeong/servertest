@@ -33,7 +33,7 @@
           <ul>
             <div border="1" class="maintb" align="center" id="icon">
               <div class="lain">
-                <div width="50px" align="center" id="Aclass" class="rank">A</div>
+                <div width="50px" align="center" id="Aclass" class="rank">OP</div>
                 <div width="500px" class="renkin" id="Aicon">
                   {%for tier1 in tier1%}
                   {% if tier1 != '' %}
@@ -44,7 +44,7 @@
                 </div>
               </div>
               <div class="lain">
-                <div align="center" id="Bclass" class="rank">B</div>
+                <div align="center" id="Bclass" class="rank">1티어</div>
                 <div width="500px" class="renkin" id="Bicon">
                   {%for tier2 in tier2%}
                   {% if tier2 != '' %}
@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="lain">
-                <div align="center" id="Cclass" class="rank">C</div>
+                <div align="center" id="Cclass" class="rank">2티어</div>
                 <div width="500px" class="renkin" id="Cicon">
                   {%for tier3 in tier3%}
                   {% if tier3 != '' %}
@@ -67,7 +67,7 @@
                 </div>
               </div>
               <div class="lain">
-                <div align="center" id="Dclass" class="rank">D</div>
+                <div align="center" id="Dclass" class="rank">3티어</div>
                 <div width="500px" class="renkin" id="Dicon">
                   {%for tier4 in tier4%}
                   {% if tier4 != '' %}
@@ -78,7 +78,7 @@
                 </div>
               </div>
               <div class="lain">
-                <div align="center" id="Eclass" class="rank">E</div>
+                <div align="center" id="Eclass" class="rank">4티어</div>
                 <div width="500px" class="renkin" id="Eicon">
                   {%for tier5 in tier5%}
                   {% if tier5 != '' %}
@@ -103,9 +103,12 @@
       </div>
       </ul>
     </nav>
+      <video autoplay muted loop name="bg" id="video-background">
+        <source src="/static/imgdata/{{raid}}.mp4" type="video/mp4">
+      </video>
     <div>
       {%include "includes/footer.html"%}
     </div>
     <script src="{% static "js/userResult.js" %}?ver=1" > </script>
   </body>
-  </html>
+</html>

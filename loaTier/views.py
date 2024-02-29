@@ -33,9 +33,10 @@ def home(request):
 
 def make(request, group):
     try:
-        pk = 0
         if(Tier.objects.last() != None):
             pk = Tier.objects.last().pk
+        else:
+            pk = 0
         raid = request.get_full_path().replace('make/','')
         context = {"engvs": getEngvInit(), "raid":raid.replace('/',''), "pk": pk}
         return render(request, "tierMaker.html", context)
@@ -57,7 +58,7 @@ def personal(request, group, id):
                 )
         # DB save
             tier.save()
-            id = str(int(id)+1)
+            id = Tier.objects.last().pk
             return HttpResponseRedirect("/res/"+group+"/"+id)
 
         # Select ORM (lastest DB row)
@@ -152,6 +153,13 @@ def statitcs(request):
             else:
                 context["tierout"] += [x]
 
+        return_obj['OP']=return_obj.pop('tier1')
+        return_obj['1티어']=return_obj.pop('tier2')
+        return_obj['2티어']=return_obj.pop('tier3')
+        return_obj['3티어']=return_obj.pop('tier4')
+        return_obj['4티어']=return_obj.pop('tier5')
+        return_obj['선택없음']=return_obj.pop('tierout')
+        
         # 통계(비율) 계산하기
         engv_statics = getEngvInit()
         for engv in engv_statics.keys():
