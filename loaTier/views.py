@@ -32,7 +32,7 @@ def home(request):
 def make(request, group):
     try:
         if(Tier.objects.last() != None):
-            pk = Tier.objects.last().pk
+            pk = str(Tier.objects.last().pk)
         else:
             pk = 1
         raid = request.get_full_path().replace('make/','')
@@ -56,7 +56,7 @@ def personal(request, group, id):
                 )
         # DB save
             tier.save()
-            id = Tier.objects.last().pk
+            id = str(Tier.objects.last().pk)
             return HttpResponseRedirect("/res/"+group+"/"+id)
 
         # Select ORM (lastest DB row)
