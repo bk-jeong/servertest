@@ -5,8 +5,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Tier
 
-# Create your views here.
-
 # 각인 dictionary 초기화
 def getEngvInit():
     egv_init = {
