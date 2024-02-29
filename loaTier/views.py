@@ -33,10 +33,9 @@ def home(request):
 
 def make(request, group):
     try:
+        pk = 0
         if(Tier.objects.last() != None):
             pk = Tier.objects.last().pk
-        else:
-            pk = 0
         raid = request.get_full_path().replace('make/','')
         context = {"engvs": getEngvInit(), "raid":raid.replace('/',''), "pk": pk}
         return render(request, "tierMaker.html", context)

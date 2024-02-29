@@ -37,7 +37,8 @@ function test(testalldata) {
     //let pieChartDraw=function(){  // 데이터를 그래프로 만드는 작업
       for (let i = 0; i < datakeys.length; i++) {
           let ctx= document.getElementById(datakeys[i]).getContext('2d');  // 2D형 데이터를 만든다 선언
-          window.pieChert= new Chart(ctx,{   //만들 그래프의 옵션 설정
+          window.pieChert= new Chart(ctx, 
+            {   //만들 그래프의 옵션 설정
             type:'pie',   // 그래프 타입은 원형 (파이구조)
             data:pieChartData[i],  // 만들어둔 데이터 등록
             options: {   // 여러 옵션 설정
