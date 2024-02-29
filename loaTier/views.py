@@ -34,7 +34,7 @@ def make(request, group):
         if(Tier.objects.last() != None):
             pk = Tier.objects.last().pk
         else:
-            pk = 0
+            pk = 1
         raid = request.get_full_path().replace('make/','')
         context = {"engvs": getEngvInit(), "raid":raid.replace('/',''), "pk": pk}
         return render(request, "tierMaker.html", context)
@@ -138,13 +138,13 @@ def statitcs(request):
         }
         # 점수를 기반으로 context에 각인명 넣어주기
         for x, y in sorted_score:
-            if y >= 4.0:
+            if y > 4.0:
                 context["tier1"] += [x]
-            elif y >= 3.0:
+            elif y > 3.0:
                 context["tier2"] += [x]
-            elif y >= 2.0:
+            elif y > 2.0:
                 context["tier3"] += [x]
-            elif y >= 1.0:
+            elif y > 1.0:
                 context["tier4"] += [x]
             elif y > 0:
                 context["tier5"] += [x]
