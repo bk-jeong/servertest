@@ -38,7 +38,7 @@ def make(request, group):
         raid = request.get_full_path().replace('make/','')
         context = {"engvs": getEngvInit(), "raid":raid.replace('/',''), "pk": pk}
         return render(request, "tierMaker.html", context)
-    except:
+    except Exception as e:
         return render(request, "error.html")
 
 def personal(request, group, id):
