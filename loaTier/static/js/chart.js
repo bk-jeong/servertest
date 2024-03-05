@@ -40,7 +40,7 @@ function test(testalldata) {
         labels:["총 참여인원:"+votecount+"명","투표 인원("+(100-vote).toFixed(1)+"%)","미투표("+vote.toFixed(1)+"%)"],  // 그래프 분류기준인 이름값이 들어가는곳
         datasets: [{  // 분류된 데이터 
           data:[0,100-vote.toFixed(1),vote.toFixed(1)],  // 데이터 값
-          backgroundColor:['balck','#99FF00','gray'], // 데이터별 색상 선택 * 나중에 같이 수정할 사항
+          backgroundColor:['balck','#BE81F7','gray'], // 데이터별 색상 선택 * 나중에 같이 수정할 사항
         }]
       };
     };
