@@ -17,11 +17,7 @@ function test(testalldata) {
       var testkey=Object.keys(testdata);  //키값 가져오기
       var testvalue=Object.values(testdata); // 벨류값 가져오기
       vote=testvalue.pop();
-      if (vote==0) {
-        vote=1
-      }
       testkey.pop();
-      
       
       zero[i]=testvalue;
       for (let index = 0; index < testkey.length; index++) {  //키값에 벨류값을 퍼센트로 계산하여 넣어주는 작업
