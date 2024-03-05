@@ -94,7 +94,7 @@ function test(testalldata) {
               responsive:false,  // 윈도우 사이즈변동에 따른 그래프 그기 변동 막아주는 기능
               elements :{
                 arc:{
-                  borderColor : ['white','#1EEB16','gray'],  //* 나중에 같이 수정할 사항
+                  borderColor : ['white','#BE81F7','gray'],  //* 나중에 같이 수정할 사항
                   borderWidth : 3,  // 파이 차트 보더크기
                   borderAlign : 'inner', // 보더가 겹쳐지지 않게 하기
                     
