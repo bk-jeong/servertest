@@ -4,9 +4,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/index.css" %}?ver=1" /> <link
+    rel="stylesheet" href="{% static "css/error.css" %}?ver=1" />
     <title>LoaTier</title>
   </head>
   <body>
-    <a href="/">To HOME</a>
+    <header>{%include "includes/header.html"%}</header>
+
+    <h1 id="title">오류! 아래 두버튼중 하나를 선택해주세요!</h1>
+
+    <div class="button">
+      <div class="buttons">
+        <button onclick="goHome()">
+          <div class="buttona">
+            <div><h3>To HOME</h3></div>
+          </div>
+        </button>
+        <button onclick="goBack()">
+          <div class="buttona"><h3>뒤로가기</h3></div>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function goHome() {
+        location.href = "/";
+      }
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+
+    <footer>{%include "includes/footer.html"%}</footer>
   </body>
-  </html>
+</html>

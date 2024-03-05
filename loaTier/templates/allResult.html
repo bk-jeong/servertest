@@ -85,7 +85,7 @@
               <div id="seticon" class="renkin">
                {%for tierout in context.tierout%}
                   {% if tierout != '' %}
-                      <div class="imgtag"><img class="icon" src="{% get_static_prefix %}imgdata/{{tierout}}.webp" draggable="false" name="{{tierout }}">
+                      <div class="imgtag"><img class="icon2" src="{% get_static_prefix %}imgdata/{{tierout}}.webp" draggable="false" name="{{tierout }}">
                       <div class="text" width="120px" >{{tierout}}</div></div>
                   {%endif%}
                {%endfor%}
@@ -103,7 +103,10 @@
      {%include "includes/footer.html"%}
   </footer>
   <div>{% for test in engv_name %}
-  <canvas  class="tooltip_image" id="{{ test }}" ></canvas>
+    <div class="tooltip_image" id="{{ test }}"><div class="tooltip_div">
+      <canvas  id="{{ test }}a" width="300px" height="250px"></canvas>
+      <canvas  id="{{ test }}b" width="300px" height="250px"></canvas>
+    </div></div>
   {% endfor %}</div>
 
   <video autoplay muted loop name="bg" id="video-background">
