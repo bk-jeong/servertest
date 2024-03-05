@@ -94,7 +94,6 @@ def statitcs(request):
         context.update(engv_Score)
         engv_statics.update({'데이터개수':ndata})
         engv_name = list(sr.engvName.keys())
-        print(engv_statics)
         engv_statics = json.dumps(engv_statics)
         return render(request, "allResult.html" ,{'context': context, 'engv_statics':engv_statics, "engv_name":engv_name})
     except Exception as e:
