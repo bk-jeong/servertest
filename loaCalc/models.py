@@ -374,6 +374,7 @@ def calcMain(prof, eqmt, raid, opts):
                 enterGate4 = False
             else:
                 opts["entries"][3] = 0
+                rewardAdd.append(5)
                 enterGate4 = True
         wPr = getRewardPWeek(info, opts)
         accReward.append(
@@ -476,4 +477,4 @@ def calcMain(prof, eqmt, raid, opts):
                 5 if opts["auction"] and opts["entries"][2] != 0 else 0
             )
 
-    return res
+    return {"res":res,"opts":opts}

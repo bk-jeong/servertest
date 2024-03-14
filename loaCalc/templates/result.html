@@ -6,7 +6,7 @@
     </div>
 
     <div>
-      <div class="normalhardForm">
+      <div class="normalhardForm" style="display: none;">
           <div>
             <button class="closeBtn" onclick="showFilter();">X</button>
           </div>
@@ -66,11 +66,13 @@
                     onchange="checkboxGroup(this)"
                     id="stage3Plus"
                     {% if opts.entries.2 == 1 or opts.entries.2 == 3%}checked{% endif %}
+                    
                   />
                 </div>
               </div>
             </fieldset>
-            <fieldset class="stageSet"> 
+            
+            <fieldset class="stageSet" {% if raid == "0" %} style="display: none;" {% endif %} > 
               <legend>4관문</legend>
               <select name="stage4" size="3" id="stage4" class="stages">
                 <option value="hard"{% if opts.entries.3 == 3 or opts.entries.3 == 4%}selected{% endif %}>하드</option>
@@ -146,6 +148,8 @@
                 <td class="tableCell" scope="col">하드 / O</td>
               {% elif stg == 4 %}
                 <td class="tableCell" scope="col">하드 / X</td>
+              {% elif stg == 5 %}
+                <td class="tableCell" scope="col">-</td>
               {% else %}
                 <td class="tableCell" scope="col"></td>
               {% endif %}
@@ -223,11 +227,18 @@ function loadFormData() {
   }
 }
 
-
+document.getElementById("auction").addEventListener("change", (e) => {
+  if ({{raid}}==1){
+    document.getElementById("auction").checked = false;
+  } else if (e.target.checked == true) {
+    stage4select.options[1].selected = true;
+  }
+});
 
 window.onload = function() {
   loadFormData();
-};
-
+  document.cookie =
+    "opts=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}; 
 </script>
 <script src="{% static "js/cal.js" %}?ver=2" > </script>

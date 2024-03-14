@@ -8,16 +8,33 @@ for (var i = 0; i < checkboxs; i++) {
   });
 }
 
+const stage2select = document.getElementById("stage2");
+const stage3select = document.getElementById("stage3");
 const stage4select = document.getElementById("stage4");
-document.getElementById("auction").addEventListener("change", (e) => {
-  if (e.target.checked == true) {
-    stage4select.options[1].selected = true;
-  }
-});
+
 
 stage4select.addEventListener("change", () => {
   if (stage4select.options[0].selected == true) {
     document.getElementById("auction").checked = false;
+  }
+  if (stage3select.options[stage3select.selectedIndex].value=="dont"){
+    stage4select.options[1].selected = true;
+  }
+});
+
+stage3select.addEventListener("change", () => {
+  if (stage2select.options[stage2select.selectedIndex].value=="dont"){
+    stage3select.options[2].selected = true;
+  }
+  if (stage3select.options[stage3select.selectedIndex].value=="dont"){
+    stage4select.options[1].selected = true;
+  }
+});
+
+stage2select.addEventListener("change", () => {
+  if (stage2select.options[stage2select.selectedIndex].value=="dont"){
+    stage3select.options[2].selected = true;
+    stage4select.options[1].selected = true;
   }
 });
 
@@ -51,6 +68,13 @@ function hendscheck() {
     document.getElementById("fstreward").checked = true;
   }
 }
+
+document.getElementById("fstreward").addEventListener("change", (e) => {
+  if (document.getElementById("hands").value <5) {
+    document.getElementById("fstreward").checked = false;
+  }
+});
+
 
 document.getElementById("collCalc").onclick = function () {
   deleteCookie("opts");

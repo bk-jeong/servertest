@@ -172,6 +172,7 @@ input[type="checkbox"] {
 .normalhardForm fieldset {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #allbonus {
