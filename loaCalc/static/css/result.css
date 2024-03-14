@@ -1,0 +1,179 @@
+body {
+  padding-top: 85px;
+  user-select: none;
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.instruction {
+  margin-top: 70px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.count_ingredient {
+  width: 100px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 500px;
+}
+
+.tableRoot {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableHead_root,
+.tableBody_root {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.tableCell {
+  padding: 8px 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tableCell:first-child {
+  text-align: left;
+}
+
+.tableBody_root:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tableCell_under {
+  padding: 8px 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+  flex: 1;
+}
+
+.quickSlot {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.quickSlot input[type="number"],
+.quickSlot input[type="checkBox"] {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  outline: none;
+}
+
+.quickSlot input[type="checkBox"] {
+  width: 15px;
+  height: 15px;
+}
+
+.quickSlot input[type="number"] {
+  width: 70px;
+}
+
+.filter {
+  position: relative;
+  padding: 4px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter:hover {
+  background-color: #45a049;
+}
+
+.bonus {
+  width: 15px;
+  display: inline-block;
+}
+
+.normalhardForm {
+  position: relative;
+  bottom: 0;
+  width: 600px;
+  height: 270px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  white-space: nowrap;
+  z-index: 0;
+  opacity: 1;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  width: auto;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.calculateBtn {
+  background-color: orchid;
+  color: white;
+  padding: 4px 16px;
+  border: solid 0px black;
+  border-radius: 4px;
+  float: right;
+}
+
+.calculateBtn:hover {
+  background-color: darksalmon;
+}
+
+.closeBtn {
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  float: right;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.stageSet {
+  width: 13%;
+}
+
+.normalhardForm fieldset {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#allbonus {
+  margin-left: 200px;
+}

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/Calculator.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/result.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/Info.css" %}?ver=1" />
+    <link rel="stylesheet" href="{% static "css/input_name.css" %}?ver=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>LoaTier</title>
+  </head>
+  <body>
+    <header>{%include "includes/header.html"%}</header>
+    <div class="characterInfo">{%include "characterInfo.html"%}</div>
+    
+    </div>
+    <div class="result">{%include "result.html"%}</div>
+    <footer>{%include "includes/footer.html"%}</footer>
+
+  </body>
+</html>

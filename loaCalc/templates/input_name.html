@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/index.css" %}?ver=1" /> <link rel="stylesheet" href="{% static "css/input_name.css" %}?ver=1" /> <link
+    rel="stylesheet" href="{% static "css/Calculator.css" %}?ver=1" />
+    <title>LoaTier</title>
+  </head>
+  <body>
+    <header>{%include "includes/header.html"%}</header>
+
+    <div class="pageName">
+      <h1>초월 & 계승 계산기</h1>
+      <h3>초월 7단계 / 일리아칸 계승완료 까지 필요한 재료 갯수 계산</h3>
+    </div>
+    <div class="direction">
+      <h3>원하는 계산의 이미지를 선택한 후, 캐릭터 명을 입력하세요</h3>
+    </div>
+
+    <div class="inputName">
+      <form action="/calc/" method="post">
+        <div class="area_raid">
+          <div class="character">
+            <input type="radio" id="kamen_info" name="raidName" value="1" />
+            <label for="kamen_info" id="kamen_info_label">
+              <img src="https://i.imgur.com/inTtFRH.png" alt="카멘" draggable="false" />
+            </label>
+            <span>카멘</span>
+          </div>
+
+          <div class="character">
+            <input type="radio" id="illiakan_info" name="raidName" value="0" />
+            <label for="illiakan_info" id="illiakan_info_label">
+              <img src="https://i.imgur.com/QXnwSY8.png" alt="일리아칸" draggable="false" />
+            </label>
+            <span>일리아칸</span>
+          </div>
+        </div>
+        <div>
+          <input id="charName" name="charName" type="text" placeholder="캐릭터명을 입력하세요" autofocus size="50" maxlength="12" />
+          <button class="button">검색</button>
+        </div>
+      </form>
+    </div>
+    <footer>{%include "includes/footer.html"%}</footer>
+  </body>
+  <script>
+    document.cookie = "opts=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+  </script>
+</html>
