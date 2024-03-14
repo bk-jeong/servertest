@@ -17,9 +17,6 @@ function test(testalldata) {
       var testkey=Object.keys(testdata);  //키값 가져오기
       var testvalue=Object.values(testdata); // 벨류값 가져오기
       vote=testvalue.pop();
-      if (vote==0) {
-        vote=1
-      }
       testkey.pop();
       
       
