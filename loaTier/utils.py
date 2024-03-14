@@ -78,9 +78,8 @@ class StaticResult:
             if pick[en] != 0:
                 for tn in ["OP", "1티어", "2티어", "3티어", "4티어"]:
                     res[en][tn] = tPe[tn][en] / pick[en]
-                    res[en]["선택없음"] = n-pick[en]
             else:
-                res[en]["선택없음"] = n
+                res[en]["선택없음"] = n-pick[en]
         return res
     
     def getEngvScore(tPe, pick):

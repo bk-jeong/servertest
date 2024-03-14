@@ -17,7 +17,11 @@ function test(testalldata) {
       var testkey=Object.keys(testdata);  //키값 가져오기
       var testvalue=Object.values(testdata); // 벨류값 가져오기
       vote=testvalue.pop();
+      if (vote==0) {
+        vote=1
+      }
       testkey.pop();
+      
       
       zero[i]=testvalue;
       for (let index = 0; index < testkey.length; index++) {  //키값에 벨류값을 퍼센트로 계산하여 넣어주는 작업
@@ -36,7 +40,7 @@ function test(testalldata) {
         labels:["총 참여인원:"+votecount+"명","투표 인원("+(100-vote).toFixed(1)+"%)","미투표("+vote.toFixed(1)+"%)"],  // 그래프 분류기준인 이름값이 들어가는곳
         datasets: [{  // 분류된 데이터 
           data:[0,100-vote.toFixed(1),vote.toFixed(1)],  // 데이터 값
-          backgroundColor:['balck','#BE81F7','gray'], // 데이터별 색상 선택 * 나중에 같이 수정할 사항
+          backgroundColor:['balck','#99FF00','gray'], // 데이터별 색상 선택 * 나중에 같이 수정할 사항
         }]
       };
     };
@@ -90,7 +94,7 @@ function test(testalldata) {
               responsive:false,  // 윈도우 사이즈변동에 따른 그래프 그기 변동 막아주는 기능
               elements :{
                 arc:{
-                  borderColor : ['white','#BE81F7','gray'],  //* 나중에 같이 수정할 사항
+                  borderColor : ['white','#1EEB16','gray'],  //* 나중에 같이 수정할 사항
                   borderWidth : 3,  // 파이 차트 보더크기
                   borderAlign : 'inner', // 보더가 겹쳐지지 않게 하기
                     

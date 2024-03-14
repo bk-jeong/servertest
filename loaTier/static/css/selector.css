@@ -24,8 +24,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
   color: #333;
+  margin: 3px;
+  border-radius: 3px;
+}
+
+#kamen_label {
+  background-color: #3366ff;
+}
+
+#illiakan_label {
+  background-color: #669900;
+}
+#echidna_label {
+  background-color: #ff66cc;
 }
 
 .select input[type="radio"]:checked + label {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static "css/index.css" %}?ver=1" />
     <link rel="stylesheet" href="{% static "css/common.css" %}?ver=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <title>LoaTier</title>
     
   </head>
@@ -18,7 +19,7 @@
       <div class="select" style="z-index:1;">
         {%include "includes/selector.html"%}
       </div>
-       <th><button id="send" align="center">저장</button></th>
+      <button id="send" >저장</button>
       <div id="main">
         {%include "includes/tierTable.html"%}
       </div>

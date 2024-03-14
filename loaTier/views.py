@@ -69,29 +69,28 @@ def statitcs(request):
             data = Tier.objects.filter(rname=raid).values()
             alldf = pd.DataFrame(data).loc[:, tier]
             ndata = len(alldf)
-            tier_Cnt = sr.tierPerEngv(ndata, alldf)
-            engv_Pick = sr.getEngvPick(tier_Cnt)
-            engv_Score = sr.getEngvScore(tier_Cnt,engv_Pick)
-
-            tier_Cnt['OP']=tier_Cnt.pop('tier1')
-            tier_Cnt['1티어']=tier_Cnt.pop('tier2')
-            tier_Cnt['2티어']=tier_Cnt.pop('tier3')
-            tier_Cnt['3티어']=tier_Cnt.pop('tier4')
-            tier_Cnt['4티어']=tier_Cnt.pop('tier5')
-            tier_Cnt['선택없음']=tier_Cnt.pop('tierout')
-
-            engv_statics = sr.getEngvStatics(ndata,tier_Cnt,engv_Pick)
         else:
-            ndata = 0
-            engv_Score = {'tier1':[],'tier2':[],'tier3':[],'tier4':[],'tier5':[],'tierout':list(sr.engvName.keys())}
-            engv_statics = sr.getEngv()
-            for en in sr.engvName.keys():
-                engv_statics[en] = {'OP': 0, '1티어': 0, '2티어': 0, '3티어': 0, '4티어': 0, '선택없음': 0}
+            data = sr.getTier()
+            data['tierout'] = sr.getEngv()
+
+        tier_Cnt = sr.tierPerEngv(ndata, alldf)
+        engv_Pick = sr.getEngvPick(tier_Cnt)
+        engv_Score = sr.getEngvScore(tier_Cnt,engv_Pick)
+
+        tier_Cnt['OP']=tier_Cnt.pop('tier1')
+        tier_Cnt['1티어']=tier_Cnt.pop('tier2')
+        tier_Cnt['2티어']=tier_Cnt.pop('tier3')
+        tier_Cnt['3티어']=tier_Cnt.pop('tier4')
+        tier_Cnt['4티어']=tier_Cnt.pop('tier5')
+        tier_Cnt['선택없음']=tier_Cnt.pop('tierout')
+
+        engv_statics = sr.getEngvStatics(ndata,tier_Cnt,engv_Pick)
 
         # html에서 보여줄 티어표
         context = {"raid" : raid,}
         # 점수를 기반으로 context에 각인명 넣어주기
         context.update(engv_Score)
+        
         engv_statics.update({'데이터개수':ndata})
         engv_name = list(sr.engvName.keys())
         engv_statics = json.dumps(engv_statics)
@@ -99,6 +98,9 @@ def statitcs(request):
     except Exception as e:
 
         return render(request, "error.html")
+
+def gotoCalculate(request):
+    return render(request, "input_name.html")
 
 def error400(request, exception):
     return render(request, 'error.html', status=400)

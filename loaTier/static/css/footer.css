@@ -13,4 +13,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  box-shadow: 0 3px 5px 1px #000300;
+
+  font-family: "Noto Sans KR", sans-serif;
 }

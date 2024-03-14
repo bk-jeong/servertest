@@ -22,7 +22,6 @@ body {
 
 #main {
   display: flex;
-  float: left;
   margin-left: 150px;
   width: 800px;
   flex-direction: row;
@@ -32,17 +31,20 @@ body {
 #send {
   display: flex;
   margin-left: 150px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   margin-top: 0px;
   width: 200px;
   height: 35px;
-  background-color: #ffffff;
+  background-color: azure;
   color: black;
   font-size: 17px;
+  font-weight: bold;
+  border-radius: 3px;
 }
 
 #send:hover {
-  background-color: #6682ff;
+  background-color: rgb(231, 238, 237);
   box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
 }
 .text {
@@ -52,4 +54,12 @@ body {
   width: 70px;
   text-align: center;
   font-size: 11px;
+}
+
+.introduce {
+  position: relative;
+  z-index: 1;
+  color: white;
+  float: right;
+  right: -100px;
 }

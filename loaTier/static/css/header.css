@@ -3,15 +3,18 @@ header {
   top: 0;
   left: 0;
   right: 0;
-
+  z-index: 1;
   height: 75px;
   padding: 1rem;
   color: white;
   background: teal;
+  box-shadow: 0 3px 5px -1px #000300;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 nav ul {
@@ -41,4 +44,55 @@ nav ul a {
   text-decoration: none;
   margin-left: 30px;
   margin-top: 6px;
+}
+
+/*==================================*/
+
+.title {
+  font-size: 20px;
+}
+
+.title_home {
+  background-color: cadetblue;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+.title_tier {
+  background-color: cadetblue;
+  border-radius: 5px;
+  width: 90px;
+  text-align: center;
+}
+.title_show {
+  background-color: cadetblue;
+  border-radius: 5px;
+  width: 90px;
+  text-align: center;
+}
+
+.title_calc {
+  background-color: cadetblue;
+  border-radius: 5px;
+  width: 90px;
+  text-align: center;
+}
+
+/*==================================*/
+
+.title_home:hover {
+  color: dodgerblue;
+}
+
+.title_tier:hover {
+  color: lightskyblue;
+}
+
+.title_show:hover {
+  color: steelblue;
+}
+
+.title_calc:hover {
+  color: aqua;
 }

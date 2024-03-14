@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static "css/index.css" %}?ver=1" />
     <link rel="stylesheet" href="{% static "css/home.css" %}?ver=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <title>LoaTier</title>
+
   </head>
-  
   <body>
     <header>
       {%include "includes/header.html"%}
     </header>
-    <h1 id="manutitle"> 주요기능 </h1>
+    <div class="manutitle">
+      <div><h1> 사이트 이름 </h1></div>
+      <div><h2>LostArk Fanmade Website</h2></div>
+    </div>
     <div class="home" >
-        <div class="menu" >
+      <div class="main_option"><h2>주요 기능</h2></div>
+        <div class="menu">
             <a  href="/make/kamen"><div class="maina"><h3>티어 만들기</h3> <p><div class='text'>내가 만드는 티어표</div></div></a>
             <a  href="res/all?raid=kamen"><div class="maina"><h3>티어 통계</h3><p><div class='text'>사람들이 생각하는 티어 통계</div></div></a>
-            <a  href="#"><div class="maina"><h3>새로운 기능</h3><p><div class='text'>새로 만들어질 기능</div></div></a>
+            <a  href="/input/"><div class="maina"><h3>초월 & 계승 계산기</h3><p><div class='text'>계승에 필요한 재료 계산</div></div></a>
         </div>
     </div>
     <div>

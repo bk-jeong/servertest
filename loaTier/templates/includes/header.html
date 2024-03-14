@@ -8,13 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Header</title>
     <link rel="stylesheet" href="{% static "css/header.css" %}?after" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <h1>menu</h1>
-          <a href="/">home</a>
+          <h1 class="title">사이트이름</h1>
+          <a href="/" class="title_home">home</a>
+          <a href="/make/kamen" class="title_tier">MakeTier</a>
+          <a href="/res/all?raid=kamen" class="title_show">ShowTier</a>
+          <a href="/input/" class="title_calc">Calculator</a>
         </ul>
       </nav>
     </header>

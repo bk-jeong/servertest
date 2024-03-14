@@ -1,7 +1,31 @@
-#manutitle {
-  margin-left: 400px;
-  margin-right: 400px;
-  min-width: 200px;
+.manutitle {
+  width: 100vw;
+  height: 350px;
+  background-color: teal;
+  top: -65px;
+  margin: 0;
+  padding-top: 0;
+  position: relative;
+  z-index: -1;
+}
+
+.manutitle h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+}
+
+.manutitle h2 {
+  position: absolute;
+  top: calc(50% + 70px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
 }
 
 .home {
@@ -30,7 +54,8 @@
 .maina {
   width: 300px;
   height: 200px;
-  border: solid 3px black;
+  border: solid 0.5px black;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -42,6 +67,8 @@
 body {
   padding-top: 150px;
   text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
 }
 
 a {
@@ -53,5 +80,11 @@ h3 {
 
 .text {
   color: gray;
-  width: 100px;
+  width: 90px;
+}
+
+.main_option {
+  position: flex;
+  float: left;
+  left: 0;
 }
