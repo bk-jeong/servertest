@@ -79,3 +79,13 @@ body {
   margin-top: 70px;
   height: 550px;
 }
+
+.grade5 {
+  background: linear-gradient(135deg, #341a09, #a24006);
+}
+.grade6 {
+  background: linear-gradient(135deg, #3d3325, #dcc999);
+}
+.grade7 {
+  background: linear-gradient(135deg, #0c2e2c, #2faba8);
+}

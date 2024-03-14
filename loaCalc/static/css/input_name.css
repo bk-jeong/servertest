@@ -14,7 +14,7 @@
   top: 27px;
   justify-content: center;
   align-items: center;
-  background-color: teal;
+  background-color: #88e4e4;
   position: relative;
   z-index: -1;
 }
@@ -97,20 +97,20 @@ button {
 
 #kamen_info:checked + label {
   background-color: #6682ff;
-  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+  box-shadow: 0px 0px 0px 5px rgba(150, 255, 250, 0.7);
 }
 #kamen_info:hover + label {
   background-color: #6682ff;
-  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+  box-shadow: 0px 0px 0px 5px rgba(150, 255, 250, 0.7);
 }
 
 #illiakan_info:checked + label {
   background-color: #47c83e;
-  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+  box-shadow: 0px 0px 0px 5px rgba(150, 255, 250, 0.7);
 }
 #illiakan_info:hover + label {
   background-color: #47c83e;
-  box-shadow: 0px 0px 0px 5px rgba(192, 194, 250, 0.7);
+  box-shadow: 0px 0px 0px 5px rgb(150, 255, 250, 0.7);
 }
 
 .character img {

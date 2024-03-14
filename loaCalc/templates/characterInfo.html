@@ -13,27 +13,27 @@
     <h3 id="equipment_list">장착 장비 목록</h3>
     <div class="equipment_table">
       <div class="equipment">
-        <div class="equipment_img"><img src="{{eqmt.1.Icon}}" /></div>
+        <div class="equipment_img"><img src="{{eqmt.1.Icon}}" class="{% if eqmt.1.Grade == '유물' %}grade5{% elif eqmt.1.Grade == '고대' %}grade6{% endif %}"/></div>
         <div class="equipment_text">{% if eqmt.1.exceed %}초월 : {{eqmt.1.exceed}}<br />{% endif %}{{eqmt.1.Name}}</div>
       </div>
       <div class="equipment">
-        <div class="equipment_img"><img src="{{eqmt.5.Icon}}" /></div>
+        <div class="equipment_img"><img src="{{eqmt.5.Icon}}" class="{% if eqmt.5.Grade == '유물' %}grade5{% elif eqmt.5.Grade == '고대' %}grade6{% endif %}"/></div>
         <div class="equipment_text">{% if eqmt.5.exceed %}초월 : {{eqmt.5.exceed}}<br />{% endif %}{{eqmt.5.Name}}</div>
       </div>
       <div class="equipment">
-        <div class="equipment_img"><img src="{{eqmt.2.Icon}}" /></div>
+        <div class="equipment_img"><img src="{{eqmt.2.Icon}}" class="{% if eqmt.2.Grade == '유물' %}grade5{% elif eqmt.2.Grade == '고대' %}grade6{% endif %}"/></div>
         <div class="equipment_text">{% if eqmt.2.exceed %}초월 : {{eqmt.2.exceed}}<br />{% endif %}{{eqmt.2.Name}}</div>
       </div>
       <div class="equipment">
-        <div class="equipment_img"><img src="{{eqmt.3.Icon}}" /></div>
+        <div class="equipment_img"><img src="{{eqmt.3.Icon}}" class="{% if eqmt.3.Grade == '유물' %}grade5{% elif eqmt.3.Grade == '고대' %}grade6{% endif %}"/></div>
         <div class="equipment_text">{% if eqmt.3.exceed %}초월 : {{eqmt.3.exceed}}<br />{% endif %}{{eqmt.3.Name}}</div>
       </div>
       <div class="equipment">
-        <div class="equipment_img"><img src="{{eqmt.4.Icon}}" /></div>
+        <div class="equipment_img"><img src="{{eqmt.4.Icon}}" class="{% if eqmt.4.Grade == '유물' %}grade5{% elif eqmt.4.Grade == '고대' %}grade6{% endif %}"/></div>
         <div class="equipment_text">{% if eqmt.4.exceed %}초월 : {{eqmt.4.exceed}}<br />{% endif %}{{eqmt.4.Name}}</div>
       </div>
       <div class="equipment">
-        <div class="equipment_img"><img src="{{eqmt.0.Icon}}" /></div>
+        <div class="equipment_img"><img src="{{eqmt.0.Icon}}" class="{% if eqmt.0.Grade == '유물' %}grade5{% elif eqmt.0.Grade == '고대' %}grade6{% elif eqmt.0.Grade == '에스더' %}grade7{% endif %}"/></div>
         <div class="equipment_text">{{eqmt.0.Name}}</div>
       </div>
     </div>
